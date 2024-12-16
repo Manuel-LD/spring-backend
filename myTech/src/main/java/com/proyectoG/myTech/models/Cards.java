@@ -1,5 +1,7 @@
 package com.proyectoG.myTech.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,18 +25,23 @@ public class Cards {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_card")
+    @JsonProperty("id_card")
     @Getter @Setter private Integer idCard;
     
     @Column(name = "name_card")
+    @JsonProperty("name_card")
     @Getter @Setter private String nameCard;
     
     @Column(name = "number_card")
+    @JsonProperty("number_card")
     @Getter @Setter private Integer numberCard;
     
-    @Column
+    @Column(name = "cvv")
+	@JsonProperty("cvv")
 	@Getter @Setter private Integer cvv;
     
-    @Column(name = "expiration_date")
+    @Column(name = "expirationDate")
+	@JsonProperty("expirationDate")
     @Getter @Setter private String expirationDate;
     
     @OneToOne(mappedBy = "card", cascade = CascadeType.ALL, orphanRemoval = true)

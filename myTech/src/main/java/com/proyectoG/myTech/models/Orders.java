@@ -1,6 +1,7 @@
 package com.proyectoG.myTech.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -27,15 +28,23 @@ public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_order")
+    @JsonProperty("id_order")
 	@Getter @Setter private Integer idOrder;
     
+    @Column(name = "amount")
+	@JsonProperty("amount")
     @Getter @Setter private Integer amount;
     
+    @Column(name = "subtotal")
+	@JsonProperty("subtotal")
     @Getter @Setter private Integer subtotal;
     
+    @Column(name = "total")
+	@JsonProperty("total")
     @Getter @Setter private Integer total;
     
     @Column(name = "date_creation")
+    @JsonProperty("date_creation")
 	@Getter @Setter private String dateCreation;
     
     @ManyToOne

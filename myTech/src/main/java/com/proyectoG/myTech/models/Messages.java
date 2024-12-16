@@ -1,6 +1,7 @@
 package com.proyectoG.myTech.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,8 +27,11 @@ public class Messages {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_message")
+	@JsonProperty("id_message")
 	@Getter @Setter private Integer idMessage;
 	
+	@Column(name = "comment")
+	@JsonProperty("comment")
 	@Getter @Setter private String comment;
     
     @ManyToOne

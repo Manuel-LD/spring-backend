@@ -1,6 +1,7 @@
 package com.proyectoG.myTech.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,19 +26,31 @@ public class Products {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_products")
+	@JsonProperty("id_products")
 	@Getter @Setter private Integer idProducts;
     
+    @Column(name = "category")
+	@JsonProperty("category")
     @Getter @Setter private String category;
     
     @Column(name = "url_image")
+    @JsonProperty("url_image")
 	@Getter @Setter private String urlImage;
     
+    @Column(name = "price")
+	@JsonProperty("price")
     @Getter @Setter private Integer price;
     
+    @Column(name = "condition")
+	@JsonProperty("condition")
     @Getter @Setter private String condition;
     
+    @Column(name = "color")
+	@JsonProperty("color")
     @Getter @Setter private String color;
     
+    @Column(name = "description")
+	@JsonProperty("description")
     @Getter @Setter private String description;
     
     @ManyToOne

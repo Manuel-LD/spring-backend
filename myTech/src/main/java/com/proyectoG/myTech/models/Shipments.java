@@ -1,5 +1,7 @@
 package com.proyectoG.myTech.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,19 +25,27 @@ public class Shipments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_shipment")
+    @JsonProperty("id_shipment")
 	@Getter @Setter private Integer idShipment;
     
+    @Column(name = "address")
+	@JsonProperty("address")
     @Getter @Setter private String address;
     
     @Column(name = "tracking_number")
+    @JsonProperty("tracking_number")
 	@Getter @Setter private String trackingNumber;
     
+    @Column(name = "status")
+	@JsonProperty("status")
     @Getter @Setter private String status;
     
     @Column(name = "shipping_date")
+    @JsonProperty("shipping_date")
 	@Getter @Setter private String shippingDate;
     
     @Column(name = "estimated_delivery_date")
+    @JsonProperty("estimated_delivery_date")
 	@Getter @Setter private String estimatedDeliveryDate;
     
     @OneToOne(mappedBy = "shipment", cascade = CascadeType.ALL, orphanRemoval = true)

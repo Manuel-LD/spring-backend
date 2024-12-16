@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -30,21 +31,31 @@ public class Users {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_user")
+	@JsonProperty("id_user")
 	@Getter @Setter private Integer idUser;
 	
 	@Column(name = "first_name")
+	@JsonProperty("first_name")
 	@Getter @Setter private String firstName;
     
 	@Column(name = "last_name")
+	@JsonProperty("last_name")
     @Getter @Setter private String lastName;
     
+	@Column(name = "address")
+	@JsonProperty("address")
     @Getter @Setter private String address;
     
+	@Column(name = "email")
+	@JsonProperty("email")
     @Getter @Setter private String email;
     
     @Column(name = "phone_number")
+    @JsonProperty("phone_number")
 	@Getter @Setter private String phoneNumber;
     
+    @Column(name = "rol")
+	@JsonProperty("rol")
     @Getter @Setter private String rol;
     
     @OneToMany(mappedBy ="user", fetch = FetchType.LAZY)

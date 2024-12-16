@@ -70,7 +70,7 @@ public class Users {
 	@JsonManagedReference
 	@Getter @Setter private Set<Products> products = new HashSet<>();
     
-    /*@OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user")
     @JsonBackReference
-    private Cards card;*/
+    private Cards card;
 }

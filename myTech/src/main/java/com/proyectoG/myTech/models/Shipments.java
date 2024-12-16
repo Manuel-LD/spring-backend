@@ -48,7 +48,7 @@ public class Shipments {
     @JsonProperty("estimated_delivery_date")
 	@Getter @Setter private String estimatedDeliveryDate;
     
-    /*@OneToOne(mappedBy = "shipment")
+    @OneToOne(mappedBy = "shipment")
     @JsonBackReference
-    private Orders order;*/
+    private Orders order;
 }

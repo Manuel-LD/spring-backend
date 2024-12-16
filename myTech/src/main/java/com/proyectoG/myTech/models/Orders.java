@@ -52,8 +52,8 @@ public class Orders {
     @JsonBackReference
     @Getter @Setter private Users user;
     
-    /*@OneToOne
+    @OneToOne
     @JoinColumn(name = "shipment_id_shipment", nullable = false)
     @JsonManagedReference
-    private Shipments shipment;*/
+    private Shipments shipment;
 }

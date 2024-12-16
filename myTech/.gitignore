@@ -35,6 +35,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-### .propperties para la conexión con la base de datos ###
-src/main/resources/application.properties

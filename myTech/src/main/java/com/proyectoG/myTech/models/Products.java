@@ -54,7 +54,7 @@ public class Products {
     @Getter @Setter private String description;
     
     @ManyToOne
-    @JoinColumn(name = "id_user", nullable=false)
+    @JoinColumn(name = "user_id_user", nullable=false)
     @JsonBackReference
     @Getter @Setter private Users user;
 }

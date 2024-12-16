@@ -2,13 +2,11 @@ package com.proyectoG.myTech.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -34,7 +32,7 @@ public class Cards {
     
     @Column(name = "number_card")
     @JsonProperty("number_card")
-    @Getter @Setter private Integer numberCard;
+    @Getter @Setter private Long numberCard;
     
     @Column(name = "cvv")
 	@JsonProperty("cvv")
@@ -44,6 +42,8 @@ public class Cards {
 	@JsonProperty("expirationDate")
     @Getter @Setter private String expirationDate;
     
-    @OneToOne(mappedBy = "card", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Users user;
+   /*@OneToOne
+    @JoinColumn(name = "user_id_user", nullable = false)
+    @JsonManagedReference
+    private Users user;*/
 }

@@ -1,8 +1,8 @@
 package com.proyectoG.myTech.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -48,6 +48,7 @@ public class Shipments {
     @JsonProperty("estimated_delivery_date")
 	@Getter @Setter private String estimatedDeliveryDate;
     
-    @OneToOne(mappedBy = "shipment", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Orders order;
+    /*@OneToOne(mappedBy = "shipment")
+    @JsonBackReference
+    private Orders order;*/
 }

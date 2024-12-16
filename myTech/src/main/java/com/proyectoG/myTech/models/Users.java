@@ -3,10 +3,10 @@ package com.proyectoG.myTech.models;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -70,6 +70,7 @@ public class Users {
 	@JsonManagedReference
 	@Getter @Setter private Set<Products> products = new HashSet<>();
     
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Cards card;
+    /*@OneToOne(mappedBy = "user")
+    @JsonBackReference
+    private Cards card;*/
 }

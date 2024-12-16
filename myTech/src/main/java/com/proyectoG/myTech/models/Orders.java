@@ -1,9 +1,9 @@
 package com.proyectoG.myTech.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,7 +20,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "order")
+@Table(name = "customer_order")
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -48,10 +48,12 @@ public class Orders {
 	@Getter @Setter private String dateCreation;
     
     @ManyToOne
-    @JoinColumn(name = "id_user", nullable=false)
+    @JoinColumn(name = "user_id_user", nullable=false)
     @JsonBackReference
     @Getter @Setter private Users user;
     
-    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Shipments shipment;
+    /*@OneToOne
+    @JoinColumn(name = "shipment_id_shipment", nullable = false)
+    @JsonManagedReference
+    private Shipments shipment;*/
 }
